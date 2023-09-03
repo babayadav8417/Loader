@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(
+          black,
+          blue
+        ); /* for linear gredient it should be apply in background not
+            in background color and by default it's value warry from top to bottom but we can 
+            change it like linear-gradient(to right or to bottom then color name)*/
+      }
+      .container {
+        width: 50%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2px;
+        /* border: 2px solid black; */
+        border-radius: 50%;
+        position: relative;
+        box-shadow: 10px 10px 30px black;
+      }
+      .container::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 0;
+        background-color: white;
+        scale: 1;
+        transition: all ease 1s;
+      }
+      .container:hover::after {
+        width: 100%;
+      }
+      img {
+        border-radius: 50%;
+        width: 9vw;
+        height: 15vh;
+        object-fit: cover;
+        margin: 10px;
+      }
+      h1 {
+        font-size: 2vw;
+        color: white;
+        font-weight: 900;
+        margin: 10px;
+      }
+      .loader {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #dddd;
+        margin: 10px;
+        border-top-color: blue;
+        animation: rotate 1s infinite;
+      }
+      @keyframes rotate {
+        100% {
+          rotate: 360deg;
+        }
+      }
+      p {
+        font-size: 1.2vw;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img class="img-box" src="New pic baba yadav.jpg" alt="" />
+      <h1>BABA YADAV</h1>
+      <div class="loader"></div>
+      <p>Welcome</p>
+    </div>
+  </body>
+</html>
